@@ -26,9 +26,6 @@ export const serverApi = axios.create({
  * OUTPUT: Connected socket instance for event-based messaging
  */
 export const socket = io(BASE_URL, {
-  transports: ["websocket", "polling"],
-  extraHeaders: {
-    "bypass-tunnel-reminder": "true", // Melewati halaman peringatan localtunnel
-  },
+  transports: ["websocket"], 
   autoConnect: true,
 });
