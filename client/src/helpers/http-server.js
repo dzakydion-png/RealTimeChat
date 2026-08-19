@@ -16,6 +16,7 @@ export const serverApi = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
+    "bypass-tunnel-reminder": "true",
   },
 });
 
@@ -26,5 +27,8 @@ export const serverApi = axios.create({
  */
 export const socket = io(BASE_URL, {
   transports: ["websocket", "polling"],
+  extraHeaders: {
+    "bypass-tunnel-reminder": "true", // Melewati halaman peringatan localtunnel
+  },
   autoConnect: true,
 });
