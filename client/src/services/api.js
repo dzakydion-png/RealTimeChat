@@ -1,4 +1,9 @@
 import { serverApi as api } from "../helpers/http-server";
+import axios from "axios";
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
+});
+
 
 /**
  * WHAT: API service module for chat-related HTTP requests
