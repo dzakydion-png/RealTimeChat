@@ -40,7 +40,7 @@ module.exports = class AIController {
         .join("\n");
 
       const model = genAI.getGenerativeModel({
-        model: "gemini-3-flash-preview",
+        model: "gemini-3.6-flash",
       });
 
       const prompt = `

@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "group_project_db",
+    "database": "real_time_chat",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

@@ -20,9 +20,9 @@
   "homepage": "https://github.com/Group-Project-Phase-2-HCK91/server#readme",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
-    "cloudinary": "^2.9.0",
+    "cloudinary": "^2.10.1",
     "cors": "^2.8.6",
-    "dotenv": "^17.2.3",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "multer": "^2.0.2",
     "pg": "^8.17.2",

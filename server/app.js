@@ -31,6 +31,7 @@ const MessageController = require("./controllers/messageController");
 const errorHandler = require("./middlewares/errorHandlers");
 const AIController = require("./controllers/aiController");
 const UploadController = require("./controllers/uploadController");
+const PORT = process.env.PORT || 5000;
 
 // Routes
 app.post("/users", UserController.createUser);
@@ -80,6 +81,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log("Server is running on http://localhost:3000");
+server.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });

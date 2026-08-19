@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
  * INPUT: Environment variable VITE_SERVER_URL
  * OUTPUT: Base URL for all HTTP and WebSocket connections
  */
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "http://localhost:5000";
 
 /**
  * WHAT: Axios instance with pre-configured base URL
