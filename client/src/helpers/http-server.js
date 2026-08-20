@@ -39,14 +39,17 @@ export const serverApi = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
-    "ngrok-skip-browser-warning": "69420", // Ini kode ajaib untuk melewati peringatan Ngrok
+    "ngrok-skip-browser-warning": "69420",
   },
 });
 
+// Konfigurasi Socket yang paling stabil untuk Tunnel + Mobile
 export const socket = io(BASE_URL, {
-  transports: ["websocket"],
+  transports: ["polling", "websocket"],
+  upgrade: true,
+  rememberUpgrade: true,
   extraHeaders: {
-    "ngrok-skip-browser-warning": "69420", // Ini kode ajaib untuk melewati peringatan Ngrok
+    "ngrok-skip-browser-warning": "69420",
   },
   autoConnect: true,
 });
