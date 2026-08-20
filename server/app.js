@@ -4,17 +4,27 @@ const { createServer } = require("node:http");
 const { Server } = require("socket.io");
 const app = express();
 const server = createServer(app);
+
+// 1. UPDATE CORS UNTUK SOCKET.IO
 const io = new Server(server, {
   cors: {
     origin: "*",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["ngrok-skip-browser-warning"] // Izinkan header dari Ngrok
   },
 });
-// const port = 3000;
+
 const multer = require("multer");
 const cors = require("cors");
 const { User, Message } = require("./models");
 
-app.use(cors());
+// 2. UPDATE CORS UNTUK EXPRESS
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "ngrok-skip-browser-warning"] // Izinkan header dari Ngrok
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
