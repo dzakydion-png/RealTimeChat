@@ -46,8 +46,6 @@ export const serverApi = axios.create({
 // Konfigurasi Socket yang paling stabil untuk Tunnel + Mobile
 export const socket = io(BASE_URL, {
   transports: ["polling", "websocket"],
-  upgrade: true,
-  rememberUpgrade: true,
   extraHeaders: {
     "ngrok-skip-browser-warning": "69420",
   },
